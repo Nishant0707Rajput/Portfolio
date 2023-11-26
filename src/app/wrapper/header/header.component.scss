@@ -1,4 +1,7 @@
 .nav_bar{
-    background-color: #191919;
+    background-color: blue;
     color: red;
+    .nav_wrap{
+        display: flex;
+    }
 }

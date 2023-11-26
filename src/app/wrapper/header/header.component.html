@@ -1,11 +1,16 @@
-<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle class="nav_bar">
+<mat-expansion-panel (opened)="panelOpened()" (closed)="panelOpenState=false" hideToggle class="nav_bar" #myPanel>
     <mat-expansion-panel-header>
-        <mat-panel-title>
-            Self aware panel
-        </mat-panel-title>
-        <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-        </mat-panel-description>
+        <div class="nav_wrap">
+            <div class="home">Home</div>
+            <div class="home">About</div>
+            <div class="home">Projects</div>
+            <div class="home">Contact</div>
+        </div>
     </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
+    <div class="nav_wrap">
+        <div class="home">Home</div>
+        <div class="home">About</div>
+        <div class="home">Projects</div>
+        <div class="home">Contact</div>
+    </div>
 </mat-expansion-panel>
