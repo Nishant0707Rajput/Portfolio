@@ -35,6 +35,10 @@ $portfolio-theme: mat.define-light-theme(
 @include mat.all-component-themes($portfolio-theme);
 
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --Dark-Mode: #191919;
+  --light-Content: #A7A7A7;
+}
 
 html,
 body {
@@ -47,9 +51,9 @@ body {
   color: #333333;
 }
 
-body.dark-mode{
-  background-color: #ffffff;
-  color: #333333;
+body.dark-mode {
+  background: var(--Dark-Mode);
+  color: #ffffff;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
