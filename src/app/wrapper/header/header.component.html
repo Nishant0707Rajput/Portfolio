@@ -1,13 +1,24 @@
 <mat-expansion-panel (opened)="panelOpened()" (closed)="panelOpenState=false" hideToggle class="nav_bar" #myPanel>
-    <mat-expansion-panel-header>
-        <div class="nav_wrap">
+    <mat-expansion-panel-header class="mat_exp">
+        <div *ngIf="!mobileWidth" class="nav_wrap_1">
             <div class="home">Home</div>
             <div class="home">About</div>
             <div class="home">Projects</div>
             <div class="home">Contact</div>
         </div>
+        <ng-container *ngIf="mobileWidth">
+            <div *ngIf="!panelOpenState" class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div *ngIf="panelOpenState" class="close-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </ng-container>
     </mat-expansion-panel-header>
-    <div class="nav_wrap">
+    <div class="nav_wrap_2">
         <div class="home">Home</div>
         <div class="home">About</div>
         <div class="home">Projects</div>

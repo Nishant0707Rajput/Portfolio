@@ -36,6 +36,7 @@ export class HeaderComponent {
     if (!this.mobileWidth){
       this.myPanel.close();
     } 
+    this.panelOpenState = true;
     console.log('Panel opened');
     // You can add your logic here when the panel is opened
   }
