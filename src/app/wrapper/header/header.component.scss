@@ -1,21 +1,39 @@
+.site_icon{
+  position: absolute;
+  top: 41px;
+  right: 3vw;
+  z-index: 1;
+  img{
+    width:45px ;
+  }
+}
 .mat-expansion-panel:not(.mat-expanded)
   .mat-expansion-panel-header:not([aria-disabled="true"]):hover {
   background: var(--Dark-Mode);
 }
 .nav_bar {
+  font-family: DM Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
   margin-top: 40px;
   background-color: var(--Dark-Mode);
   color: var(--light-Content);
   .nav_and_ic {
     // border: 2px solid red;
+    text-align: center;
     display: flex;
     min-width: 200px;
     width: 90vw;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    .icon{
-        margin-left: 4vw;
+    .icon {
+      margin-left: 4vw;
+      img{
+        width:45px ;
+      }
     }
     .inner {
       display: flex;
@@ -24,21 +42,21 @@
         display: flex;
         gap: 5vw;
         margin: 0 2.5vw;
-        text-align: center;
-        font-family: DM Sans;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 26px;
       }
-      .nav_links {
-        display: flex;
-        gap: 10px 10px;
-        img {
-          height: 30px;
-          width: 30px;
-        }
-      }
+    }
+  }
+  .nav_wrap_1 {
+    .home {
+      width: fit-content;
+      margin-bottom: 10px;
+    }
+  }
+  .nav_links {
+    display: flex;
+    gap: 10px 10px;
+    img {
+      height: 30px;
+      width: 30px;
     }
   }
 }
@@ -47,6 +65,7 @@
   width: fit-content;
   margin-left: 20px;
   padding: 0;
+  display: inline-block;
 }
 
 .hamburger-icon {

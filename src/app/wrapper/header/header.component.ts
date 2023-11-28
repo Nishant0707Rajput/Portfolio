@@ -8,8 +8,9 @@ import { MatExpansionPanel } from '@angular/material/expansion';
 })
 export class HeaderComponent {
   panelOpenState: boolean = false;
-  mobileWidth = false;
+  mobileWidth:boolean = false;
   count = 0;
+  iconLink = "assets/img/png/batman.png";
   @ViewChild('myPanel') myPanel!: MatExpansionPanel;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
@@ -19,7 +20,7 @@ export class HeaderComponent {
   ngAfterViewInit() {
     this.breakpointObserver
       .observe([
-        Breakpoints.HandsetPortrait, // or whichever breakpoint suits your requirement
+        Breakpoints.HandsetPortrait, 
         // Breakpoints.HandsetLandscape,
       ])
       .subscribe((result) => {

@@ -1,7 +1,8 @@
+<div class="site_icon" *ngIf="mobileWidth"><img src="{{iconLink}}" alt=""></div>
 <mat-expansion-panel (opened)="panelOpened()" (closed)="panelOpenState=false" hideToggle class="nav_bar" #myPanel>
     <mat-expansion-panel-header class="mat_exp">
         <div class="nav_and_ic" *ngIf="!mobileWidth">
-            <div class="icon">0707 Rajput</div>
+            <div class="icon"><img src="{{iconLink}}" alt=""></div>
             <div class="inner">
                 <div class="nav_wrap_2">
                     <div class="home">Home</div>
@@ -13,6 +14,7 @@
                 <div class="nav_links">
                     <img src="assets/img/svg/git_h.svg" alt="">
                     <img src="assets/img/svg/linkedin.svg" alt="">
+                    <img src="assets/img/svg/mail.svg" alt="">
                 </div>
             </div>
         </div>
@@ -29,10 +31,15 @@
             </div>
         </ng-container>
     </mat-expansion-panel-header>
-    <div class="nav_wrap_2">
+    <div class="nav_wrap_1">
         <div class="home">Home</div>
         <div class="home">About</div>
         <div class="home">Projects</div>
         <div class="home">Contact</div>
+        <div class="nav_links">
+            <img src="assets/img/svg/git_h.svg" alt="">
+            <img src="assets/img/svg/linkedin.svg" alt="">
+            <img src="assets/img/svg/mail.svg" alt="">
+        </div>
     </div>
 </mat-expansion-panel>
