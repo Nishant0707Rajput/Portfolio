@@ -46,16 +46,16 @@
         .cards {
             display: flex;
             flex-direction: column;
-            width: 27%;
+            width: 30%;
             align-items: center;
-            min-width: 200px;
-            max-width: 350px;
+            min-width: 145px;
+            max-width: 400px;
             border-radius: 20px;
             background: #363636;
 
             img {
                 width: 100%;
-                height: 200px;
+                min-height: 180px;
                 flex-shrink: 0;
             }
 
@@ -138,8 +138,11 @@
         gap: 30px !important;
 
         .cards {
-            min-width: 175px !important;
-
+            img {
+                width: 100%;
+                min-height: 155px !important;
+                flex-shrink: 0;
+            }
             .details {
                 padding: 7px !important;
 
