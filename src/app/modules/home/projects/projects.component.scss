@@ -53,10 +53,17 @@
             border-radius: 20px;
             background: #363636;
 
-            img {
-                width: 100%;
+            .project_img {
+                margin-top: 10px;
+                width: 365px;
+                height: 230px;
                 min-height: 180px;
                 flex-shrink: 0;
+                box-sizing: content-box;
+                img{
+                    height: 100%;
+                    width: 100%;
+                }
             }
 
             .details {
@@ -88,7 +95,7 @@
                     font-family: Poppins;
                     font-size: 14px;
                     font-style: normal;
-                    font-weight: 300;
+                    font-weight: 1000;
                     line-height: 26px;
                 }
 

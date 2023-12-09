@@ -3,14 +3,16 @@
     <div class="desc">Things I’ve built so far</div>
     <div class="project_card">
         <div class="cards" *ngFor="let row of projectDetails">
-            <img src="{{row.img_path}}" alt="">
+            <div class="project_img">
+                <img src="{{row.img_path}}" alt="">
+            </div>
             <div class="details">
                 <div class="heading_2">{{row.title}}</div>
                 <div class="content">{{row.content}}</div>
                 <div class="tech">Tech stack : {{row.stacks}}</div>
                 <div class="links">
-                    <a class="left" href="{{row.link_preview}}" target="_blank">Live Preview</a>
-                    <a class="right" href="{{row.git_link}}" target="_blank">View Code</a>
+                    <a class="left" *ngIf="row.link_preview.length" href="{{row.link_preview}}" target="_blank">Live Preview</a>
+                    <a class="right" *ngIf="row.git_link.length" href="{{row.git_link}}" target="_blank">View Code</a>
                 </div>
             </div>
         </div>

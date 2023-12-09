@@ -12,6 +12,8 @@ export class AboutComponent {
     "assets/img/svg/express_logo.svg",
     "assets/img/svg/js_logo.svg",
     "assets/img/svg/mysql_logo.svg",
+    "assets/img/png/blockchain.png",
+    "assets/img/svg/solidity.svg",
     "assets/img/svg/html_logo.svg",
     "assets/img/svg/css_logo.svg",
     "assets/img/svg/git_logo.svg",

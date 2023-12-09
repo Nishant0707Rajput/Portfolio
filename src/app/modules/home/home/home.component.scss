@@ -1,3 +1,21 @@
+
+@media screen and (max-width: 600px) {
+  /* CSS rules for screens with a width of 600 pixels or less */
+  .intro {
+    font-size: 20px;
+    line-height: 50px;
+    .nishant {
+      font-size: 20px !important;
+      line-height: 15px;
+    }
+  }
+  .profile_pic {
+    img {
+      width: 150px !important;
+      height: 150px !important;
+    }
+  }
+}
 .home {
   margin-top: 100px;
   display: flex;
@@ -48,24 +66,6 @@
       padding: 5px;
       width: 250px;
       height: 250px;
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  /* CSS rules for screens with a width of 600 pixels or less */
-  .intro {
-    font-size: 20px !important;
-    line-height: 50px;
-    .nishant {
-      font-size: 20px !important;
-      line-height: 15px;
-    }
-  }
-  .profile_pic {
-    img {
-      width: 150px !important;
-      height: 150px !important;
     }
   }
 }
