@@ -5,6 +5,7 @@ import { WrapperRoutingModule } from './wrapper-routing.module';
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     CommonModule,
-    WrapperRoutingModule
+    WrapperRoutingModule,
+    MaterialModule
   ]
 })
 export class WrapperModule { }

@@ -4,12 +4,19 @@ import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {
-    path:'',component:MainComponent
-  }
+    path: '',
+    component: MainComponent,children:[
+      {
+        path: '',
+        loadChildren: () =>
+          import('./../modules/home/home.module').then((m) => m.HomeModule),
+      }
+    ]
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class WrapperRoutingModule { }
+export class WrapperRoutingModule {}
