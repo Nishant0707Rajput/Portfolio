@@ -18,8 +18,8 @@ export class ProjectsComponent {
     {
       img_path:"assets/img/png/dakshkisan.png",
       title:"Dakshkisan",
-      content:"Daksh Kisan is committed to empowering farmers and agri-preneurs by providing access to high-quality training and educational resources. Our innovative web portal offers a comprehensive Learning Management System (LMS) with over 121 certificate courses, featuring multi-lingual videos and learning material in four languages.",
-      stacks:"Pho, Mysql, Html, Css",
+      content:"Daksh Kisan is committed to empowering farmers and agri-preneurs by providing access to high-quality training and educational resources. A web portal that offers a comprehensive Learning Management System with over 121 certificate courses, featuring multi-lingual videos and learning material in four languages.",
+      stacks:"Php, Mysql, Html, Css, Boostrap",
       link_preview:"https://dakshkisan.jk.gov.in/",
       git_link:""
     },
@@ -32,28 +32,20 @@ export class ProjectsComponent {
       git_link:""
     },
     {
-      img_path:"assets/img/jpg/batman_pro.jpg",
-      title:"Project Tile goes here",
-      content:"This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
-      stacks:"HTML , JavaScript, SASS, React",
+      img_path:"assets/img/jpg/internship_jakega.jpeg",
+      title:"Internship Jakega",
+      content:"An initiative by Jammu & Kashmir e-governance agency to provide internship opportunity to students. Developed Admin Panel for user and sub-admin management.",
+      stacks:"Angular, Html, Sass, Material, Bootstrap",
       link_preview:"",
       git_link:""
     },
     {
-      img_path:"assets/img/jpg/batman_pro.jpg",
-      title:"Project Tile goes here",
-      content:"This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
-      stacks:"HTML , JavaScript, SASS, React",
+      img_path:"assets/img/png/arbitrage.png",
+      title:"AMM Arbitrage",
+      content:"A Smart Contract that will perform arbitrage across various Decentralised Exchanges. Written Smart Contract to perform swaps from various DEXes along with flashloan. ",
+      stacks:"Solidity, Ethereum, Blockchain, Nodejs",
       link_preview:"",
       git_link:""
-    },
-    {
-      img_path:"assets/img/jpg/batman_pro.jpg",
-      title:"Project Tile goes here",
-      content:"This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content",
-      stacks:"HTML , JavaScript, SASS, React",
-      link_preview:"",
-      git_link:""
-    },
+    }
   ]
 }
