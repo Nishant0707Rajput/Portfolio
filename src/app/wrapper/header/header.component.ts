@@ -28,22 +28,22 @@ export class HeaderComponent implements AfterContentInit{
           this.mobileWidth = true;
         } else {
           this.mobileWidth = false;
-          this.myPanel.close();
+          this.myPanel?.close();
         }
       });
   }
 
   panelOpened() {
     if (!this.mobileWidth){
-      this.myPanel.close();
+      this.myPanel?.close();
     } 
     this.panelOpenState = true;
-    console.log('Panel opened');
+    // console.log('Panel opened');
     // You can add your logic here when the panel is opened
   }
 
   panelClosed() {
-    console.log('Panel closed');
+    // console.log('Panel closed');
     // You can add your logic here when the panel is closed
   }
 }
