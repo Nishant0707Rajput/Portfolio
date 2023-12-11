@@ -10,7 +10,17 @@ const routes: Routes = [
         path: '',
         loadChildren: () =>
           import('./../modules/home/home.module').then((m) => m.HomeModule),
-      }
+      },
+      {
+        path: 'tech-stacks',
+        loadChildren: () =>
+          import('./../modules/about/about.module').then((m) => m.AboutModule),
+      },
+      {
+        path: 'projects',
+        loadChildren: () =>
+          import('./../modules/projects/projects.module').then((m) => m.ProjectsModule),
+      },
     ]
   },
 ];
