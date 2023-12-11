@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterContentInit, Component, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatExpansionPanel } from '@angular/material/expansion';
 @Component({
@@ -6,7 +6,7 @@ import { MatExpansionPanel } from '@angular/material/expansion';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterContentInit{
   panelOpenState: boolean = false;
   mobileWidth:boolean = false;
   count = 0;
@@ -17,7 +17,7 @@ export class HeaderComponent {
 
   ngOnInit() {}
 
-  ngAfterViewInit() {
+  ngAfterContentInit() {
     this.breakpointObserver
       .observe([
         Breakpoints.HandsetPortrait, 
