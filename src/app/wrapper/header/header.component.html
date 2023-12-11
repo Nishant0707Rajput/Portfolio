@@ -5,16 +5,24 @@
             <div class="icon"><img src="{{iconLink}}" alt=""></div>
             <div class="inner">
                 <div class="nav_wrap_2">
-                    <div class="home">Home</div>
-                    <div class="home">About</div>
-                    <div class="home">Tech-Stacks</div>
-                    <div class="home">Projects</div>
+                    <div class="home" routerLink="/" routerLinkActive="active_nav" [routerLinkActiveOptions]="{exact:
+                        true}">Home</div>
+                    <div class="home" routerLink="tech-stacks" routerLinkActive="active_nav" [routerLinkActiveOptions]="{exact:
+                        true}">Tech-Stacks</div>
+                    <div class="home" routerLink="projects" routerLinkActive="active_nav" [routerLinkActiveOptions]="{exact:
+                        true}">Projects</div>
                     <div class="home">Contact</div>
                 </div>
                 <div class="nav_links">
-                    <img src="assets/img/svg/git_h.svg" alt="">
-                    <img src="assets/img/svg/linkedin.svg" alt="">
-                    <img src="assets/img/svg/mail.svg" alt="">
+                    <a href="https://github.com/Nishant0707Rajput?tab=repositories" target="_blank">
+                        <img src="assets/img/svg/git_h.svg" alt="">
+                    </a>
+                    <a href="https://www.linkedin.com/in/nishant07rajput/" target="_blank">
+                        <img src="assets/img/svg/linkedin.svg" alt="">
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nishant0707rajput@gmail.com" target="_blank">
+                        <img src="assets/img/svg/mail.svg" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -32,14 +40,23 @@
         </ng-container>
     </mat-expansion-panel-header>
     <div class="nav_wrap_1">
-        <div class="home">Home</div>
-        <div class="home">About</div>
-        <div class="home">Projects</div>
+        <div class="home" routerLink="/" routerLinkActive="active_nav" [routerLinkActiveOptions]="{exact:
+            true}">Home</div>
+        <div class="home" routerLink="tech-stacks" routerLinkActive="active_nav" [routerLinkActiveOptions]="{exact:
+            true}">Tech-Stacks</div>
+        <div class="home" routerLink="projects" routerLinkActive="active_nav" [routerLinkActiveOptions]="{exact:
+            true}">Projects</div>
         <div class="home">Contact</div>
         <div class="nav_links">
-            <img src="assets/img/svg/git_h.svg" alt="">
-            <img src="assets/img/svg/linkedin.svg" alt="">
-            <img src="assets/img/svg/mail.svg" alt="">
+            <a href="https://github.com/Nishant0707Rajput?tab=repositories" target="_blank">
+                <img src="assets/img/svg/git_h.svg" alt="" routerLinkActive="active_nav">
+            </a>
+            <a href="https://www.linkedin.com/in/nishant07rajput/" target="_blank">
+                <img src="assets/img/svg/linkedin.svg" alt="">
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nishant0707rajput@gmail.com" target="_blank">
+                <img src="assets/img/svg/mail.svg" alt="">
+            </a>
         </div>
     </div>
 </mat-expansion-panel>

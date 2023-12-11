@@ -1,16 +1,18 @@
-.site_icon{
+.site_icon {
   position: absolute;
   top: 41px;
   right: 3vw;
   z-index: 1;
-  img{
-    width:45px ;
+
+  img {
+    width: 45px;
   }
 }
-.mat-expansion-panel:not(.mat-expanded)
-  .mat-expansion-panel-header:not([aria-disabled="true"]):hover {
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled="true"]):hover {
   background: var(--Dark-Mode);
 }
+
 .nav_bar {
   font-family: DM Sans;
   font-size: 20px;
@@ -20,8 +22,9 @@
   margin-top: 40px;
   background-color: var(--Dark-Mode);
   color: var(--light-Content);
+
   .nav_and_ic {
-    // border: 2px solid red;
+    cursor: default;
     text-align: center;
     display: flex;
     min-width: 200px;
@@ -29,34 +32,72 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+
     .icon {
       margin-left: 4vw;
-      img{
-        width:45px ;
+
+      img {
+        width: 45px;
       }
     }
+
     .inner {
       display: flex;
       align-items: center;
+
       .nav_wrap_2 {
         display: flex;
         gap: 5vw;
         margin: 0 2.5vw;
+
+        .home {
+          cursor: pointer;
+          padding: 10px 20px;
+          transition: box-shadow 0.3s ease, background-color 0.3s ease;
+          box-shadow: 0px 4px 8px rebeccapurple;
+          border-radius: 15px;
+        }
+
+        .home:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          box-shadow: 0px 6px 12px rebeccapurple;
+        }
+
       }
     }
   }
+
+  .active_nav {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 6px 12px rebeccapurple;
+  }
+
   .nav_wrap_1 {
     .home {
       width: fit-content;
       margin-bottom: 10px;
+      cursor: pointer;
+      padding: 3px 7px;
+      transition: box-shadow 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0px 4px 8px rebeccapurple;
+      border-radius: 7px;
+    }
+
+    .home:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0px 6px 12px rebeccapurple;
     }
   }
+
   .nav_links {
     display: flex;
     gap: 10px 10px;
+    padding: 8px 0 0 0;
+
     img {
       height: 30px;
       width: 30px;
+      cursor: pointer;
     }
   }
 }
@@ -83,7 +124,8 @@
   position: absolute;
   height: 3px;
   width: 100%;
-  background: #fff; /* White color */
+  background: #fff;
+  /* White color */
   border-radius: 9px;
   transition: background 0.4s ease;
 }
@@ -118,7 +160,8 @@
   position: absolute;
   height: 3px;
   width: 100%;
-  background: #fff; /* White color */
+  background: #fff;
+  /* White color */
   transition: background 0.4s ease;
   //   margin-left: 17px;
 }
