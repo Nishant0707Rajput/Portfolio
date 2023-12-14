@@ -27,7 +27,7 @@ export class ContactComponent {
 
   onSubmit(){
     if(this.profileForm.invalid){
-      this.toastr.error("Please fill all the required details.");
+      this.toastr.error("Please fill the required details.");
       return;
     } 
     // console.log(this.profileForm.value);

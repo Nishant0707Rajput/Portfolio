@@ -46,16 +46,16 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Comic Sans MS", "Comic Sans", cursive !important;
   background-color: #191919;
   color: #333333;
 }
 
-body.dark-mode {
-  background: var(--Dark-Mode);
-  color: #ffffff;
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+// body.dark-mode {
+//   background: var(--Dark-Mode);
+//   color: #ffffff;
+//   margin: 0;
+//   font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
 
 
