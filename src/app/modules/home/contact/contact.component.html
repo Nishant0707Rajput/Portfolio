@@ -1,7 +1,14 @@
 <div class="example-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="example-full-width">
         <mat-label>Enter your email</mat-label>
-        <input type="email" matInput placeholder="Enter your email" [formControl]="f.email" (keydown.enter)="onSubmit()">
+        <input 
+        type="email" 
+        matInput 
+        placeholder="Enter your email" 
+        [formControl]="f.email" 
+        (keydown.enter)="onSubmit()"
+        oninput="this.value = this.value.replace(/\s/g, '')"
+        >
         <ng-container *ngIf="f.email.invalid">
             <mat-error *ngIf="f.email.hasError('required') && f.email.touched" class="mat_error_text">*Email is required </mat-error>
             <mat-error *ngIf="f.email.hasError('email') && f.email.touched" class="mat_error_text">Not a valid email </mat-error>
@@ -10,25 +17,49 @@
 
     <mat-form-field class="example-full-width">
         <mat-label>Enter your name</mat-label>
-        <input matInput #nameInput maxlength="30" placeholder="Enter your name" [formControl]="f.name" (keydown.enter)="onSubmit()">
-        <ng-container *ngIf="f.name.invalid && f.name.hasError('required') && f.name.touched">
-            <mat-error class="mat_error_text">*Name is required </mat-error>
+        <input 
+            matInput 
+            #nameInput  
+            placeholder="Enter your name" 
+            [formControl]="f.name" 
+            (keydown.enter)="onSubmit()" 
+            oninput="this.value = this.value.replace(/^ $/,'') 
+            maxlength='30'"
+        >
+        <ng-container *ngIf="f.name.invalid">
+            <mat-error *ngIf="f.name.hasError('required') && f.name.touched" class="mat_error_text">*Name is required </mat-error>
+            <mat-error *ngIf="f.name.hasError('minlength') && f.name.touched" class="mat_error_text">Minimum 3 characters required </mat-error>
         </ng-container>
         <mat-hint align="end">{{nameInput.value.length}}/30</mat-hint>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-label>Enter your phone number</mat-label>
-        <input matInput #phoneInput maxlength="20" placeholder="Enter your phone number" [formControl]="f.phone" (keydown.enter)="onSubmit()">
-        <ng-container *ngIf="f.phone.invalid && f.phone.hasError('required') && f.phone.touched">
-            <mat-error class="mat_error_text">*Phone is required </mat-error>
+        <input 
+            matInput 
+            #phoneInput 
+            maxlength="20" 
+            placeholder="Enter your phone number" 
+            [formControl]="f.phone" 
+            (keydown.enter)="onSubmit()"
+            oninput="this.value = this.value.replace(/[^0-9+-]/g, '').replace(/\s/g, '')"
+        >
+        <ng-container *ngIf="f.phone.invalid ">
+            <mat-error *ngIf="f.phone.hasError('required') && f.phone.touched" class="mat_error_text">*Phone is required </mat-error>
+            <mat-error *ngIf="f.phone.hasError('minlength') && f.phone.touched" class="mat_error_text">*Minimum 8 characters required </mat-error>   
         </ng-container>
         <mat-hint align="end">{{phoneInput.value.length}}/20</mat-hint>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-label>Your message</mat-label>
-        <textarea matInput placeholder="Any message you want to leave for me!" [formControl]="f.description"></textarea>
+        <textarea 
+        matInput 
+        placeholder="Any message you want to leave for me!" 
+        [formControl]="f.description"
+        oninput="this.value = this.value.replace(/^ $/,'')
+        maxLength='2000'"
+        ></textarea>
     </mat-form-field>
     <div class="button_div">
         <button type="submit" (click)="onSubmit()" mat-raised-button>Submit</button>
