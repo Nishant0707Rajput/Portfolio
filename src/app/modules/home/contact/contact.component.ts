@@ -32,21 +32,20 @@ export class ContactComponent {
   }
 
   onSubmit() {
-    this.http
-      .get(API_ROUTES.checkServer)
-      .pipe()
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
     if (this.profileForm.invalid) {
       this.toastr.error('Please fill the required details.');
       return;
     }
-    // console.log(this.profileForm.value);
+    this.http
+      .post(API_ROUTES.saveUser, this.profileForm.value)
+      .pipe()
+      .subscribe({
+        next: (res) => {
+          this.toastr.success("Thanks, details saved successfully!");
+        },
+        error: (err) => {
+          this.toastr.error("Some error occured while saving details.");
+        },
+      });
   }
 }
