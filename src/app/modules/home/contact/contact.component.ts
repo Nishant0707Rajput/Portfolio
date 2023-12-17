@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -10,12 +10,18 @@ import { HttpService } from 'src/app/services/http-service.service';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private http: HttpService
+    private _http: HttpService
   ) {}
+
+  ngOnInit() {
+    this._http.get(API_ROUTES.checkServer).subscribe((res) => {
+      console.log(res);
+    });
+  }
 
   profileForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
@@ -36,15 +42,19 @@ export class ContactComponent {
       this.toastr.error('Please fill the required details.');
       return;
     }
-    this.http
+    this._http
       .post(API_ROUTES.saveUser, this.profileForm.value)
       .pipe()
       .subscribe({
         next: (res) => {
-          this.toastr.success("Thanks, details saved successfully!");
+          this.toastr.success('Thanks, we will catch up soon.');
         },
         error: (err) => {
-          this.toastr.error("Some error occured while saving details.");
+          this.toastr.error(
+            err?.error?.message
+              ? err.error.message
+              : 'Some error occured while saving details!'
+          );
         },
       });
   }

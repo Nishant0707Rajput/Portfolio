@@ -10,9 +10,10 @@ import {
 import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CommonInterceptor } from './services/common.interceptor';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

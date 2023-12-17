@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-
+  loader = new BehaviorSubject<Boolean>(false);
+  
   constructor(private http: HttpClient) { }
 
   get<T>(url: string): Observable<T> {
