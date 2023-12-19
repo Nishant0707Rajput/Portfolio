@@ -18,9 +18,9 @@ export class ContactComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this._http.get(API_ROUTES.checkServer).subscribe((res) => {
-      console.log(res);
-    });
+    // this._http.get(API_ROUTES.checkServer).subscribe((res) => {
+    //   console.log(res);
+    // });
   }
 
   profileForm = this.formBuilder.group({
