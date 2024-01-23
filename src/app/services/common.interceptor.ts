@@ -23,6 +23,9 @@ export class CommonInterceptor implements HttpInterceptor {
       setHeaders: {
         'Content-Type': 'application/json',
         'x-api-key': commonContants.API_KEY,
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE',
+        'Access-Control-Allow-Headers': 'X-Requested-With,content-type'
       },
     });
     return next.handle(request).pipe(
@@ -31,7 +34,7 @@ export class CommonInterceptor implements HttpInterceptor {
       }),
       catchError((error: HttpErrorResponse) => {
         this._http.loader.next(false);
-        return throwError(error); 
+        return throwError(error);
       }),
       tap((event) => {
         if (event.type === HttpEventType.Response) {
@@ -41,3 +44,5 @@ export class CommonInterceptor implements HttpInterceptor {
     );
   }
 }
+
+
