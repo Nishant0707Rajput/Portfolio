@@ -18,7 +18,7 @@ export class ProjectsComponent {
     {
       img_path:"assets/img/svg/esankalp.webp",
       title:"E-Sankalp Retail",
-      content:"Sankalp Kisan Store is a complete farming solution for online needs of farmers.Sankalp Kisan Store is a complete farming solution Multi Brand Platform which serves as a one-stop online solution for all the farming related needs of farmers. Sankalp Kisan Store aims to deliver ‘Best quality products at most competitive price and best in class farm services’ to every customer, with a vision to facilitate a better tomorrow for farmers and a mission to partner their journey towards prosperity through right products, right advice and right services. The online store offers a comprehensive range of products such as seeds, fertilizers, pesticides, specialty nutrients, and animal feeds.",
+      content:"Sankalp Kisan Store is a complete farming solution for online needs of farmers.Sankalp Kisan Store is a complete farming solution Multi Brand Platform which serves as a one-stop online solution for all the farming related needs of farmers. Sankalp Kisan Store aims to deliver ‘Best quality products at most competitive price and best in class farm services’ to every customer, with a vision to facilitate a better tomorrow for farmers and a mission to partner their journey towards prosperity through right products, right advice and right services.",
       stacks:"Nodejs, Express.js, MonogDB, Angular, Typescript",
       link_preview:"https://play.google.com/store/apps/details?id=com.esankalp",
       git_link:""
