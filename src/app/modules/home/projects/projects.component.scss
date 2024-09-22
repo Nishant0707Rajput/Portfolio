@@ -10,7 +10,7 @@
     .heading {
         color: var(--Solid-Heading-Dark-mode, #CCC);
         text-align: center;
-        font-family: Poppins;
+        // font-family: Poppins;
         font-size: 48px;
         font-style: normal;
         font-weight: 700;
@@ -21,7 +21,7 @@
     .desc {
         color: var(--light-Content, #A7A7A7);
         text-align: center;
-        font-family: Poppins;
+        // font-family: Poppins;
         font-size: 32px;
         font-style: normal;
         font-weight: 400;
@@ -65,6 +65,7 @@
                     height: 300px;
                     border-radius: 15px;
                     background-color: white;
+                    padding: 2px;
                 }
             }
 
@@ -74,7 +75,7 @@
                 .heading_2 {
                     color: var(--Solid-Heading-Dark-mode, #CCC);
                     text-align: center;
-                    font-family: Poppins;
+                    // font-family: Poppins;
                     font-size: 28px;
                     font-style: normal;
                     font-weight: 1000;
@@ -85,7 +86,7 @@
 
                 .content {
                     color: var(--Solid-Heading-Dark-mode, #CCC);
-                    font-family: Poppins;
+                    // font-family: Poppins;
                     font-size: 18px;
                     font-style: normal;
                     font-weight: 300;
@@ -96,7 +97,7 @@
 
                 .tech {
                     color: var(--Solid-Heading-Dark-mode, #CCC);
-                    font-family: Poppins;
+                    // font-family: Poppins;
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 1000;
@@ -109,7 +110,7 @@
 
                     a {
                         color: #FFF;
-                        font-family: Poppins;
+                        // font-family: Poppins;
                         font-size: 16px;
                         font-style: normal;
                         font-weight: 400;
