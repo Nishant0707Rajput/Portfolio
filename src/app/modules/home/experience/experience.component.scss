@@ -186,8 +186,19 @@
     }
   }
 
+  .edu-items-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .edu-sub-item.not-last {
+      padding-bottom: 1.15rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+  }
+
   .edu-degree {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 0.35rem 0;
@@ -203,13 +214,13 @@
   .edu-period {
     font-size: 0.75rem;
     color: var(--accent-emerald);
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
   }
 
   .edu-notes {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.55;
     margin: 0;
   }
 }

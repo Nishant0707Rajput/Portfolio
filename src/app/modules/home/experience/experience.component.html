@@ -52,10 +52,14 @@
         <mat-icon class="cred-icon">school</mat-icon>
         <span class="font-mono cred-label">Education</span>
       </div>
-      <h4 class="edu-degree">{{ education.degree }}</h4>
-      <div class="edu-inst">{{ education.institution }}</div>
-      <div class="edu-period font-mono">{{ education.period }}</div>
-      <p class="edu-notes">{{ education.notes }}</p>
+      <div class="edu-items-wrap">
+        <div class="edu-sub-item" *ngFor="let edu of educationList" [class.not-last]="edu !== educationList[educationList.length - 1]">
+          <h4 class="edu-degree">{{ edu.degree }}</h4>
+          <div class="edu-inst">{{ edu.institution }}</div>
+          <div class="edu-period font-mono">{{ edu.period }}</div>
+          <p class="edu-notes">{{ edu.notes }}</p>
+        </div>
+      </div>
     </div>
 
     <!-- Achievements Card -->

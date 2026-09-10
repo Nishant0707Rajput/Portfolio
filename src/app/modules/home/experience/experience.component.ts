@@ -43,12 +43,20 @@ export class ExperienceComponent {
     }
   ];
 
-  education = {
-    institution: 'Institute of Engineering & Technology (IET), Lucknow',
-    degree: 'B.Tech in Electrical Engineering',
-    period: '2018 – 2022',
-    notes: 'Graduated with strong foundation in computing, mathematics, and systems engineering.'
-  };
+  educationList = [
+    {
+      degree: 'B.Tech, Electrical Engineering',
+      institution: 'Institute of Engineering & Technology (IET), Lucknow',
+      period: '2018 – 2022',
+      notes: 'Strong foundation in systems engineering, distributed computation, and algorithms.'
+    },
+    {
+      degree: '12th Grade (Senior Secondary)',
+      institution: 'Jawahar Navodaya Vidyalaya (JNV), Auraiya',
+      period: '2017',
+      notes: 'Selected for premier national Navodaya Vidyalaya institution with STEM focus.'
+    }
+  ];
 
   achievements = [
     {
