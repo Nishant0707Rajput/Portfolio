@@ -1,70 +1,221 @@
-<div class="example-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <mat-form-field class="example-full-width">
-        <mat-label>Enter your email</mat-label>
-        <input 
-        type="email" 
-        matInput 
-        placeholder="Enter your email" 
-        [formControl]="f.email" 
-        (keydown.enter)="onSubmit()"
-        oninput="this.value = this.value.replace(/\s/g, '')"
-        >
-        <ng-container *ngIf="f.email.invalid">
-            <mat-error *ngIf="f.email.hasError('required') && f.email.touched" class="mat_error_text">*Email is required </mat-error>
-            <mat-error *ngIf="f.email.hasError('email') && f.email.touched" class="mat_error_text">Not a valid email </mat-error>
-        </ng-container>
-    </mat-form-field>
+<div class="contact-section container-system">
+  <!-- Section Header -->
+  <div class="section-header">
+    <div class="section-label">COMMUNICATION & INQUIRIES</div>
+    <h2 class="section-title">Let's Discuss Architecture & Distributed Systems</h2>
+    <p class="section-subtitle">
+      Whether you are exploring scalable microservices, RAG/MCP pipelines, or senior engineering roles, feel free to reach out.
+    </p>
+  </div>
 
-    <mat-form-field class="example-full-width">
-        <mat-label>Enter your name</mat-label>
-        <input 
-            matInput 
-            #nameInput  
-            placeholder="Enter your name" 
-            [formControl]="f.name" 
-            (keydown.enter)="onSubmit()" 
-            oninput="this.value = this.value.replace(/^ $/,'') 
-            maxlength='30'"
-        >
-        <ng-container *ngIf="f.name.invalid">
-            <mat-error *ngIf="f.name.hasError('required') && f.name.touched" class="mat_error_text">*Name is required </mat-error>
-            <mat-error *ngIf="f.name.hasError('minlength') && f.name.touched" class="mat_error_text">Minimum 3 characters required </mat-error>
-        </ng-container>
-        <mat-hint align="end">{{nameInput.value.length}}/30</mat-hint>
-    </mat-form-field>
+  <div class="contact-grid">
+    <!-- Left Column: Direct Channels & Status -->
+    <div class="contact-info-card">
+      <div class="availability-badge">
+        <span class="pulse-dot"></span>
+        <span class="font-mono">Open to Senior / Staff Backend & AI Roles</span>
+      </div>
 
-    <mat-form-field class="example-full-width">
-        <mat-label>Enter your phone number</mat-label>
-        <input 
-            matInput 
-            #phoneInput 
-            maxlength="20" 
-            placeholder="Enter your phone number" 
-            [formControl]="f.phone" 
-            (keydown.enter)="onSubmit()"
-            oninput="this.value = this.value.replace(/[^0-9+-]/g, '').replace(/\s/g, '')"
-        >
-        <ng-container *ngIf="f.phone.invalid ">
-            <mat-error *ngIf="f.phone.hasError('required') && f.phone.touched" class="mat_error_text">*Phone is required </mat-error>
-            <mat-error *ngIf="f.phone.hasError('minlength') && f.phone.touched" class="mat_error_text">*Minimum 8 characters required </mat-error>   
-        </ng-container>
-        <mat-hint align="end">{{phoneInput.value.length}}/20</mat-hint>
-    </mat-form-field>
+      <h3 class="info-title">Direct Channels</h3>
+      <p class="info-desc">
+        Fastest response via email or LinkedIn. Available across Indian Standard Time and flexible with US/EU time zones.
+      </p>
 
-    <mat-form-field class="example-full-width">
-        <mat-label>Your message</mat-label>
-        <textarea 
-        matInput 
-        placeholder="Any message you want to leave for me!" 
-        [formControl]="f.description"
-        oninput="this.value = this.value.replace(/^ $/,'')
-        maxLength='2000'"
-        ></textarea>
-    </mat-form-field>
-    <div class="caution">Caution: The first submission might just break the sound barrier... in reverse. Our hosting service has a "gentle start" policy. Don't panic if you're tapping your toes; it's just the hosting service doing its warm-up stretches. And remember, you're in the elite club with a fab <span class="boldIt">five requests a day</span>, obviously you were not going to spam. 🚀😊 <br><span class="boldIt">
-        #HostageToFreeHosting, #BudgetBytes
-    </span></div>
-    <div class="button_div">
-        <button type="submit" (click)="onSubmit()" mat-raised-button>Submit</button>
+      <div class="channels-list">
+        <a href="mailto:nishant0707rajput@gmail.com" class="channel-item">
+          <div class="channel-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="channel-detail">
+            <span class="channel-label font-mono">Email</span>
+            <span class="channel-value">nishant0707rajput&#64;gmail.com</span>
+          </div>
+        </a>
+
+        <a href="tel:+919772953851" class="channel-item">
+          <div class="channel-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="channel-detail">
+            <span class="channel-label font-mono">Direct Phone</span>
+            <span class="channel-value">+91-9772953851</span>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/nishant07rajput/" target="_blank" rel="noopener" class="channel-item">
+          <div class="channel-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </div>
+          <div class="channel-detail">
+            <span class="channel-label font-mono">LinkedIn Profile</span>
+            <span class="channel-value">linkedin.com/in/nishant07rajput</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/Nishant0707Rajput" target="_blank" rel="noopener" class="channel-item">
+          <div class="channel-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </div>
+          <div class="channel-detail">
+            <span class="channel-label font-mono">GitHub Profile</span>
+            <span class="channel-value">github.com/Nishant0707Rajput</span>
+          </div>
+        </a>
+      </div>
     </div>
+
+    <!-- Right Column: Interactive Contact Form -->
+    <div class="contact-form-card">
+      <form class="system-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label class="form-label" for="contact-name">Your Name *</label>
+          <input
+            id="contact-name"
+            type="text"
+            class="form-input"
+            placeholder="Alex Rivera"
+            [formControl]="f.name"
+            maxlength="40"
+          >
+          <span class="form-error" *ngIf="f.name.invalid && f.name.touched">
+            Name is required (min 3 characters).
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-email">Email Address *</label>
+          <input
+            id="contact-email"
+            type="email"
+            class="form-input"
+            placeholder="alex@company.com"
+            [formControl]="f.email"
+          >
+          <span class="form-error" *ngIf="f.email.invalid && f.email.touched">
+            Valid email address is required.
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-phone">Phone / WhatsApp *</label>
+          <input
+            id="contact-phone"
+            type="tel"
+            class="form-input"
+            placeholder="+1 555 019 2831"
+            [formControl]="f.phone"
+          >
+          <span class="form-error" *ngIf="f.phone.invalid && f.phone.touched">
+            Phone number is required (min 8 digits).
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="contact-desc">Project Details / Message</label>
+          <textarea
+            id="contact-desc"
+            class="form-textarea"
+            rows="4"
+            placeholder="Tell me about your distributed architecture requirements or role..."
+            [formControl]="f.description"
+            maxlength="2000"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary form-submit-btn">
+          <span>Send Message</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Terminal Status & Comprehensive Architectural Footer -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <!-- Column 1: Identity & Role -->
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <div class="footer-monogram">NR</div>
+          <div class="footer-brand-info">
+            <span class="footer-name">Nishant Rajput</span>
+            <span class="footer-role font-mono">Backend Software Engineer · SDE-2</span>
+          </div>
+        </div>
+        <p class="footer-bio">
+          Designing scalable Node.js microservices, LangGraph agent workflows, and event-driven infrastructure delivering 10M+ daily events.
+        </p>
+        <div class="footer-status-pill">
+          <span class="pulse-dot"></span>
+          <span class="font-mono">Open to Senior / Staff Backend & AI Roles</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Flagship Systems -->
+      <div class="footer-col">
+        <h4 class="footer-col-title font-mono">Flagship Systems</h4>
+        <ul class="footer-links">
+          <li><a href="#systems">AI Interview Platform (LiveKit + LangGraph)</a></li>
+          <li><a href="#systems">MCP Job Orchestrator (OpenSearch RAG)</a></li>
+          <li><a href="#systems">Notification Platform (10M+/Day Peak)</a></li>
+          <li><a href="#systems">ROKSAAN E-Commerce (Stripe Gateway)</a></li>
+          <li><a href="#archive">Secondary Production Archive (5 Projects)</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Core Domains -->
+      <div class="footer-col">
+        <h4 class="footer-col-title font-mono">System Domains</h4>
+        <ul class="footer-links">
+          <li><a href="#architecture">Distributed Microservices (Node/TS)</a></li>
+          <li><a href="#architecture">LangGraph & MCP AI Agent Loops</a></li>
+          <li><a href="#architecture">OpenSearch Vector DB & Redis Dedup</a></li>
+          <li><a href="#architecture">AWS EKS, SQS & KEDA Autoscaling</a></li>
+          <li><a href="#experience">Career History & 500+ LeetCode DSA</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Connect & Resume -->
+      <div class="footer-col">
+        <h4 class="footer-col-title font-mono">Direct Uplinks</h4>
+        <ul class="footer-links">
+          <li>
+            <a href="https://github.com/Nishant0707Rajput" target="_blank" rel="noopener">GitHub Profile</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/nishant07rajput/" target="_blank" rel="noopener">LinkedIn Network</a>
+          </li>
+          <li>
+            <a href="mailto:nishant0707rajput@gmail.com">Direct Email Inquiry</a>
+          </li>
+          <li>
+            <a href="tel:+919772953851">+91-9772953851</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-system-status font-mono">
+        <span class="pulse-dot"></span> All Distributed Pipelines Operational · Resilient Microservices
+      </div>
+      <div class="footer-copyright font-mono">
+        © 2026 Nishant Rajput. All rights reserved.
+      </div>
+    </div>
+  </footer>
 </div>

@@ -1,49 +1,32 @@
-import { AfterContentInit, Component, ViewChild } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { MatExpansionPanel } from '@angular/material/expansion';
+import { Component, HostListener } from '@angular/core';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements AfterContentInit{
-  panelOpenState: boolean = false;
-  mobileWidth:boolean = false;
-  count = 0;
-  iconLink = "assets/img/png/batman.png";
-  @ViewChild('myPanel') myPanel!: MatExpansionPanel;
+export class HeaderComponent {
+  isScrolled = false;
+  mobileMenuOpen = false;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-
-  ngOnInit() {}
-
-  ngAfterContentInit() {
-    this.breakpointObserver
-      .observe([
-        Breakpoints.HandsetPortrait, 
-        // Breakpoints.HandsetLandscape,
-      ])
-      .subscribe((result) => {
-        if (result.matches) {
-          this.mobileWidth = true;
-        } else {
-          this.mobileWidth = false;
-          this.myPanel?.close();
-        }
-      });
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 20;
   }
 
-  panelOpened() {
-    if (!this.mobileWidth){
-      this.myPanel?.close();
-    } 
-    this.panelOpenState = true;
-    // console.log('Panel opened');
-    // You can add your logic here when the panel is opened
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
-  panelClosed() {
-    // console.log('Panel closed');
-    // You can add your logic here when the panel is closed
+  closeMobileMenu() {
+    this.mobileMenuOpen = false;
+  }
+
+  scrollToSection(sectionId: string) {
+    this.closeMobileMenu();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }

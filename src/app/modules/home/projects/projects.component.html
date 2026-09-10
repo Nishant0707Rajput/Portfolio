@@ -1,20 +1,123 @@
-<div class="main">
-    <div class="heading">Projects</div>
-    <div class="desc">I have worked on so far</div>
-    <div class="project_card">
-        <div class="cards" *ngFor="let row of projectDetails">
-            <div class="project_img">
-                <img src="{{row.img_path}}" alt="">
-            </div>
-            <div class="details">
-                <div class="heading_2">{{row.title}}</div>
-                <div class="content">{{row.content}}</div>
-                <div class="tech">Tech stack : {{row.stacks}}</div>
-                <div class="links">
-                    <a class="left" *ngIf="row.link_preview.length" href="{{row.link_preview}}" target="_blank">Live Preview</a>
-                    <a class="right" *ngIf="row.git_link.length" href="{{row.git_link}}" target="_blank">View Code</a>
-                </div>
-            </div>
+<div class="projects-section container-system">
+  <!-- Section Header -->
+  <div class="section-header">
+    <div class="section-label">FLAGSHIP ARCHITECTURES</div>
+    <h2 class="section-title">Enterprise Systems & High-Throughput Pipelines</h2>
+    <p class="section-subtitle">
+      Core backend architectures, multi-agent AI orchestrators, and event-driven distributed systems engineered in production.
+    </p>
+  </div>
+
+  <!-- Flagship Projects Grid -->
+  <div class="flagship-grid">
+    <article class="system-card" *ngFor="let sys of flagshipSystems" [id]="sys.id">
+      <!-- Card Header -->
+      <div class="card-header">
+        <div class="header-badges">
+          <span class="company-badge font-mono">{{ sys.company }} · {{ sys.period }}</span>
+          <span class="tech-tag font-mono">{{ sys.badge }}</span>
         </div>
+        <div class="header-actions" *ngIf="sys.previewLink">
+          <a [href]="sys.previewLink" target="_blank" rel="noopener" class="preview-link" title="Live Platform">
+            <span>Visit Platform</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Title & Tagline -->
+      <div class="card-body">
+        <h3 class="system-title">{{ sys.title }}</h3>
+        <p class="system-tagline">{{ sys.tagline }}</p>
+
+        <!-- Metrics Callout Strip -->
+        <div class="impact-metrics-row">
+          <div class="metric-pill" *ngFor="let m of sys.impactMetrics">
+            <span class="m-val font-mono">{{ m.value }}</span>
+            <span class="m-lbl">{{ m.label }}</span>
+          </div>
+        </div>
+
+        <!-- Architectural Highlights from Resume -->
+        <ul class="highlight-bullets">
+          <li *ngFor="let bullet of sys.bulletPoints">
+            <svg class="bullet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>{{ bullet }}</span>
+          </li>
+        </ul>
+
+        <!-- Architecture Flow Preview -->
+        <div class="architecture-flow-box">
+          <div class="flow-header font-mono">
+            <span class="pulse-dot"></span> Pipeline Architecture Flow
+          </div>
+          <div class="flow-steps">
+            <div class="flow-step" *ngFor="let st of sys.architectureSteps; let last = last">
+              <div class="step-badge font-mono">{{ st.step }}</div>
+              <div class="step-content">
+                <div class="step-node">{{ st.node }}</div>
+                <div class="step-desc">{{ st.desc }}</div>
+              </div>
+              <div class="step-connector" *ngIf="!last">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Stack Badges -->
+        <div class="tech-stack-row">
+          <span class="stack-badge font-mono" *ngFor="let tech of sys.techStack">{{ tech }}</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Secondary Archive: Client Work & Previous Platforms -->
+  <div id="archive" class="archive-section">
+    <div class="archive-banner">
+      <div class="archive-info">
+        <h3 class="archive-title">Additional Production & Client Work</h3>
+        <p class="archive-desc">
+          Earlier web applications, government portals, and DeFi smart contracts built across e-commerce, LMS, and lending.
+        </p>
+      </div>
+      <button class="btn-secondary toggle-archive-btn" (click)="toggleArchive()">
+        <span>{{ showArchive ? 'Hide Archive' : 'Explore 5 Archived Systems' }}</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" [class.rotated]="showArchive">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
     </div>
+
+    <!-- Collapsible Archive Grid -->
+    <div class="archive-grid" *ngIf="showArchive">
+      <div class="archive-card" *ngFor="let item of archivedProjects">
+        <div class="archive-card-header">
+          <span class="archive-category font-mono">{{ item.role }}</span>
+          <a *ngIf="item.link" [href]="item.link" target="_blank" rel="noopener" class="archive-link" title="Open Link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+        <h4 class="archive-item-title">{{ item.title }}</h4>
+        <p class="archive-item-desc">{{ item.desc }}</p>
+        <div class="archive-stacks">
+          <span class="archive-pill font-mono" *ngFor="let st of item.stacks">{{ st }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,78 @@
+<div class="experience-section container-system">
+  <!-- Section Header -->
+  <div class="section-header">
+    <div class="section-label">CAREER & CREDENTIALS</div>
+    <h2 class="section-title">Production Experience & Track Record</h2>
+    <p class="section-subtitle">
+      4+ years designing high-availability backend architectures across high-growth platforms, fintech, and AI systems.
+    </p>
+  </div>
+
+  <!-- Timeline Layout -->
+  <div class="timeline-container">
+    <div class="timeline-item" *ngFor="let exp of experiences">
+      <div class="timeline-marker">
+        <div class="marker-dot"></div>
+        <div class="marker-line"></div>
+      </div>
+
+      <div class="timeline-content">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <span class="exp-period font-mono">{{ exp.period }}</span>
+              <h3 class="exp-role">{{ exp.role }}</h3>
+              <div class="exp-company">{{ exp.company }}</div>
+            </div>
+            <span class="exp-badge font-mono">{{ exp.badge }}</span>
+          </div>
+
+          <ul class="exp-highlights">
+            <li *ngFor="let h of exp.highlights">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="exp-bullet-icon">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>{{ h }}</span>
+            </li>
+          </ul>
+
+          <div class="exp-tech-row">
+            <span class="exp-pill font-mono" *ngFor="let t of exp.tech">{{ t }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dual Cards: Education & Achievements -->
+  <div class="credentials-grid">
+    <!-- Education Card -->
+    <div class="credential-card">
+      <div class="card-icon-title">
+        <mat-icon class="cred-icon">school</mat-icon>
+        <span class="font-mono cred-label">Education</span>
+      </div>
+      <h4 class="edu-degree">{{ education.degree }}</h4>
+      <div class="edu-inst">{{ education.institution }}</div>
+      <div class="edu-period font-mono">{{ education.period }}</div>
+      <p class="edu-notes">{{ education.notes }}</p>
+    </div>
+
+    <!-- Achievements Card -->
+    <div class="credential-card">
+      <div class="card-icon-title">
+        <mat-icon class="cred-icon">verified</mat-icon>
+        <span class="font-mono cred-label">Key Achievements</span>
+      </div>
+      <div class="achieve-list">
+        <div class="achieve-item" *ngFor="let a of achievements">
+          <mat-icon class="achieve-icon">{{ a.icon }}</mat-icon>
+          <div>
+            <h5 class="achieve-title">{{ a.title }}</h5>
+            <p class="achieve-desc">{{ a.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

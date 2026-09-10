@@ -1,15 +1,92 @@
-<div class="home">
-    <div class="intro">
-        <div class="con">Hi, </div>
-        <div class="nishant">I am Nishant Rajput</div>
-        <div class="con">Full Stack Developer</div>
-        <div class="con"></div>
-    </div>
-    <div class="profile_pic">
-        <img src="assets/img/jpg/profile.webp" alt="">
-    </div>
-</div>
+<section id="hero" class="hero-section">
+  <div class="hero-grid container-system">
+    <!-- Left Column: Copy, Value Prop & CTAs -->
+    <div class="hero-content">
+      <div class="hero-profile-card">
+        <div class="profile-avatar-frame">
+          <img src="assets/img/jpg/profile.webp" alt="Nishant Rajput" class="profile-avatar-img">
+          <span class="pulse-dot avatar-pulse"></span>
+        </div>
+        <div class="profile-meta">
+          <div class="status-pill">
+            <span>SDE-2 @ Unstop · Distributed Systems & Cloud Architecture</span>
+          </div>
+          <div class="profile-sub-tag font-mono">System Design (HLD/LLD) · AWS Infrastructure · Node.js & LangGraph</div>
+        </div>
+      </div>
 
-<app-about></app-about>
-<app-projects></app-projects>
-<app-contact></app-contact>
+      <h1 class="hero-title">
+        Architecting <span class="text-gradient-cyan">High-Throughput</span> Distributed Systems & Cloud Platforms
+      </h1>
+
+      <p class="hero-subtext">
+        4+ years architecting scalable Node.js microservices, resilient AWS cloud backbones (EKS, SQS, SES), and AI agent workflows handling 10M+ daily events.
+      </p>
+
+      <div class="hero-actions">
+        <button (click)="scrollToSection('systems')" class="btn-primary">
+          <span>Explore Flagship Systems</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+
+        <button (click)="scrollToSection('contact')" class="btn-secondary">
+          <span>Get In Touch</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Live Node Telemetry Card -->
+      <div class="live-telemetry-badge">
+        <div class="telemetry-radar">
+          <span class="pulse-dot"></span>
+        </div>
+        <div class="telemetry-info">
+          <span class="telemetry-label font-mono">Active Architecture Component</span>
+          <span class="telemetry-name">{{ activeNodeName }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Canvas Stage -->
+    <div class="hero-visual">
+      <div class="canvas-wrapper">
+        <div #canvasContainer class="three-canvas-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Telemetry Metrics Bar -->
+  <div class="metrics-bar container-system">
+    <div class="metric-card" *ngFor="let metric of metrics">
+      <div class="metric-value font-mono">{{ metric.value }}</div>
+      <div class="metric-label">{{ metric.label }}</div>
+      <div class="metric-sub font-mono">{{ metric.sub }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- Flagship Systems & Project Archive Section -->
+<section id="systems" class="section-wrapper">
+  <app-projects></app-projects>
+</section>
+
+<!-- Architecture & Competencies Stack Section -->
+<section id="architecture" class="section-wrapper">
+  <app-about></app-about>
+</section>
+
+<!-- Experience & Education Timeline Section -->
+<section id="experience" class="section-wrapper">
+  <app-experience></app-experience>
+</section>
+
+<!-- Contact & System Status Section -->
+<section id="contact" class="section-wrapper">
+  <app-contact></app-contact>
+</section>

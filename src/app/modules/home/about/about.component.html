@@ -1,9 +1,47 @@
-<div class="main">
-    <div class="heading">My Tech Stack</div>
-    <div class="desc">Technologies I’ve been working with recently</div>
-    <div class="tech_icon">
-        <ng-container *ngFor="let ele of logos">
-            <img src="{{ele}}" alt="">
-        </ng-container>
+<div class="competencies-section container-system">
+  <!-- Section Header -->
+  <div class="section-header">
+    <div class="section-label">TECHNICAL ARCHITECTURE</div>
+    <h2 class="section-title">Core Competencies & Technology Matrix</h2>
+    <p class="section-subtitle">
+      Deep expertise in distributed microservices, AI/LLM orchestration (MCP & RAG), analytical event stores, and cloud infrastructure.
+    </p>
+  </div>
+
+  <!-- 4 Architecture Pillars Grid -->
+  <div class="pillars-grid">
+    <div class="pillar-card" *ngFor="let pillar of competencyPillars">
+      <div class="pillar-header">
+        <div class="pillar-icon-box">
+          <mat-icon>{{ pillar.icon }}</mat-icon>
+        </div>
+        <div class="pillar-title-wrap">
+          <h3 class="pillar-domain">{{ pillar.domain }}</h3>
+          <span class="pillar-tagline font-mono">{{ pillar.tagline }}</span>
+        </div>
+      </div>
+
+      <p class="pillar-summary">{{ pillar.summary }}</p>
+
+      <div class="pillar-skills">
+        <div class="skill-item" *ngFor="let skill of pillar.skills">
+          <span class="skill-name">{{ skill.name }}</span>
+          <span class="skill-tag font-mono">{{ skill.tag }}</span>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Engineering Philosophy / Core Competency Highlights -->
+  <div class="core-competencies-grid">
+    <div class="comp-item" *ngFor="let c of coreCompetencies">
+      <div class="comp-indicator">
+        <span class="pulse-dot"></span>
+      </div>
+      <div class="comp-text">
+        <h4 class="comp-title">{{ c.title }}</h4>
+        <p class="comp-desc">{{ c.desc }}</p>
+      </div>
+    </div>
+  </div>
 </div>
