@@ -62,4 +62,16 @@
       <a href="assets/RESUME.pdf" target="_blank" download="NISHANT_RAJPUT_4_YOE_BACKEND.pdf" class="btn-primary" style="width: 100%;">Download Resume</a>
     </div>
   </div>
+
+  <!-- Scroll Progress Indicator Line -->
+  <div class="scroll-progress-track">
+    <div class="scroll-progress-fill" [style.width.%]="scrollProgress"></div>
+  </div>
 </header>
+
+<!-- Floating Scroll to Top button -->
+<button class="scroll-top-btn" [class.visible]="showScrollTop" (click)="scrollToTop()" aria-label="Scroll to top" title="Scroll to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>

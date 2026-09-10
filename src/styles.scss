@@ -237,4 +237,107 @@ body {
   }
 }
 
+/* ==========================================================================
+   Scroll Reveal System & Micro-Animations
+   ========================================================================== */
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+
+  &.reveal-scale {
+    transform: scale(0.95) translateY(20px);
+  }
+
+  &.reveal-left {
+    transform: translateX(-30px);
+  }
+
+  &.reveal-right {
+    transform: translateX(30px);
+  }
+
+  &.is-revealed {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+}
+
+/* Stagger delays for card grids */
+.reveal-stagger {
+  > *:nth-child(1) { transition-delay: 0.05s; }
+  > *:nth-child(2) { transition-delay: 0.15s; }
+  > *:nth-child(3) { transition-delay: 0.25s; }
+  > *:nth-child(4) { transition-delay: 0.35s; }
+  > *:nth-child(5) { transition-delay: 0.45s; }
+  > *:nth-child(6) { transition-delay: 0.55s; }
+}
+
+/* Scroll Progress Line under Header */
+.scroll-progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+
+  .scroll-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-cyan), #3b82f6, var(--accent-emerald));
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    width: 0%;
+    transition: width 0.1s ease-out;
+  }
+}
+
+/* Floating Scroll to Top button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(14, 18, 28, 0.85);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 990;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background: var(--accent-cyan);
+    color: #08090d;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 240, 255, 0.35);
+  }
+
+  @media (max-width: 640px) {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
 

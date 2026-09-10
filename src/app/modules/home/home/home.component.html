@@ -1,7 +1,7 @@
 <section id="hero" class="hero-section">
   <div class="hero-grid container-system">
     <!-- Left Column: Copy, Value Prop & CTAs -->
-    <div class="hero-content">
+    <div class="hero-content reveal-on-scroll">
       <div class="hero-profile-card">
         <div class="profile-avatar-frame">
           <img src="assets/img/jpg/profile.webp" alt="Nishant Rajput" class="profile-avatar-img">
@@ -54,7 +54,7 @@
     </div>
 
     <!-- Right Column: Interactive Canvas Stage -->
-    <div class="hero-visual">
+    <div class="hero-visual reveal-on-scroll reveal-scale">
       <div class="canvas-wrapper">
         <div #canvasContainer class="three-canvas-container"></div>
       </div>
@@ -62,7 +62,7 @@
   </div>
 
   <!-- Telemetry Metrics Bar -->
-  <div class="metrics-bar container-system">
+  <div class="metrics-bar container-system reveal-on-scroll reveal-stagger">
     <div class="metric-card" *ngFor="let metric of metrics">
       <div class="metric-value font-mono">{{ metric.value }}</div>
       <div class="metric-label">{{ metric.label }}</div>
@@ -72,21 +72,21 @@
 </section>
 
 <!-- Flagship Systems & Project Archive Section -->
-<section id="systems" class="section-wrapper">
+<section id="systems" class="section-wrapper reveal-on-scroll">
   <app-projects></app-projects>
 </section>
 
 <!-- Architecture & Competencies Stack Section -->
-<section id="architecture" class="section-wrapper">
+<section id="architecture" class="section-wrapper reveal-on-scroll">
   <app-about></app-about>
 </section>
 
 <!-- Experience & Education Timeline Section -->
-<section id="experience" class="section-wrapper">
+<section id="experience" class="section-wrapper reveal-on-scroll">
   <app-experience></app-experience>
 </section>
 
 <!-- Contact & System Status Section -->
-<section id="contact" class="section-wrapper">
+<section id="contact" class="section-wrapper reveal-on-scroll">
   <app-contact></app-contact>
 </section>

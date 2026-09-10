@@ -1,6 +1,6 @@
 <div class="contact-section container-system">
   <!-- Section Header -->
-  <div class="section-header">
+  <div class="section-header reveal-on-scroll">
     <div class="section-label">COMMUNICATION & INQUIRIES</div>
     <h2 class="section-title">Let's Discuss Architecture & Distributed Systems</h2>
     <p class="section-subtitle">
@@ -10,7 +10,7 @@
 
   <div class="contact-grid">
     <!-- Left Column: Direct Channels & Status -->
-    <div class="contact-info-card">
+    <div class="contact-info-card reveal-on-scroll reveal-left">
       <div class="availability-badge">
         <span class="pulse-dot"></span>
         <span class="font-mono">Open to Senior / Staff Backend & AI Roles</span>
@@ -74,7 +74,7 @@
     </div>
 
     <!-- Right Column: Interactive Contact Form -->
-    <div class="contact-form-card">
+    <div class="contact-form-card reveal-on-scroll reveal-right">
       <form class="system-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label class="form-label" for="contact-name">Your Name *</label>

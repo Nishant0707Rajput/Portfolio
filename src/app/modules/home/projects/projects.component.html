@@ -1,6 +1,6 @@
 <div class="projects-section container-system">
   <!-- Section Header -->
-  <div class="section-header">
+  <div class="section-header reveal-on-scroll">
     <div class="section-label">FLAGSHIP ARCHITECTURES</div>
     <h2 class="section-title">Enterprise Systems & High-Throughput Pipelines</h2>
     <p class="section-subtitle">
@@ -10,7 +10,7 @@
 
   <!-- Flagship Projects Grid -->
   <div class="flagship-grid">
-    <article class="system-card" *ngFor="let sys of flagshipSystems" [id]="sys.id">
+    <article class="system-card reveal-on-scroll" *ngFor="let sys of flagshipSystems" [id]="sys.id">
       <!-- Card Header -->
       <div class="card-header">
         <div class="header-badges">
@@ -82,8 +82,8 @@
     </article>
   </div>
 
-  <!-- Secondary Archive: Client Work & Previous Platforms -->
-  <div id="archive" class="archive-section">
+  <!-- Secondary Projects Archive Section -->
+  <div id="archive" class="secondary-archive-container reveal-on-scroll">
     <div class="archive-banner">
       <div class="archive-info">
         <h3 class="archive-title">Additional Production & Client Work</h3>

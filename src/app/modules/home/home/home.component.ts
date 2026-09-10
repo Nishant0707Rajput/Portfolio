@@ -1,5 +1,6 @@
-import { Component, ElementRef, HostListener, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild, NgZone, HostListener, AfterViewInit } from '@angular/core';
 import * as THREE from 'three';
+import { ScrollAnimateService } from 'src/app/services/scroll-animate.service';
 
 interface TelemetryMetric {
   label: string;
@@ -12,7 +13,7 @@ interface TelemetryMetric {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('canvasContainer', { static: true }) canvasContainer!: ElementRef<HTMLDivElement>;
 
   metrics: TelemetryMetric[] = [
@@ -48,10 +49,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     'EKS Pod Mesh'
   ];
 
-  constructor(private ngZone: NgZone) {}
+  constructor(
+    private ngZone: NgZone,
+    private scrollAnimate: ScrollAnimateService
+  ) {}
 
   ngOnInit(): void {
     this.initThree();
+  }
+
+  ngAfterViewInit(): void {
+    this.scrollAnimate.initScrollObserver();
   }
 
   ngOnDestroy(): void {
@@ -79,6 +87,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   onMouseMove(event: MouseEvent): void {
     this.mouseX = (event.clientX - this.windowHalfX) * 0.0008;
     this.mouseY = (event.clientY - this.windowHalfY) * 0.0008;
+  }
+
+  @HostListener('window:touchmove', ['$event'])
+  onTouchMove(event: TouchEvent): void {
+    if (event.touches.length > 0) {
+      const touch = event.touches[0];
+      this.mouseX = (touch.clientX - this.windowHalfX) * 0.0009;
+      this.mouseY = (touch.clientY - this.windowHalfY) * 0.0009;
+    }
   }
 
   private initThree(): void {
