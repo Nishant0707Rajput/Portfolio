@@ -18,10 +18,15 @@ export class ScrollAnimateService {
     this.ngZone.runOutsideAngular(() => {
       // Small timeout to ensure DOM has rendered
       setTimeout(() => {
+        if (window.innerWidth <= 768) {
+          this.revealAllFallback();
+          return;
+        }
+
         const options: IntersectionObserverInit = {
           root: null,
-          rootMargin: '0px 0px -60px 0px',
-          threshold: 0.12
+          rootMargin: '0px 0px 100px 0px',
+          threshold: 0.02
         };
 
         this.observer = new IntersectionObserver((entries) => {

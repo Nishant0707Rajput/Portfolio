@@ -4,6 +4,10 @@
 
 .section-header {
   margin-bottom: 3.5rem;
+
+  @media (max-width: 640px) {
+    margin-bottom: 2rem;
+  }
 }
 
 /* Timeline Layout */
@@ -12,6 +16,11 @@
   flex-direction: column;
   gap: 2rem;
   margin-bottom: 3.5rem;
+
+  @media (max-width: 640px) {
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .timeline-item {
@@ -164,6 +173,11 @@
   -webkit-backdrop-filter: blur(16px);
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 640px) {
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+  }
 
   .card-icon-title {
     display: flex;

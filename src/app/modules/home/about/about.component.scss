@@ -4,6 +4,10 @@
 
 .section-header {
   margin-bottom: 3rem;
+
+  @media (max-width: 640px) {
+    margin-bottom: 2rem;
+  }
 }
 
 /* 4 Architecture Pillars Grid */
@@ -16,6 +20,7 @@
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    margin-bottom: 2rem;
   }
 }
 

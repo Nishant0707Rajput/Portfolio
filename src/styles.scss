@@ -264,6 +264,18 @@ body {
     opacity: 1;
     transform: translateY(0) translateX(0) scale(1);
   }
+
+  @media (max-width: 768px) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 /* Stagger delays for card grids */
